@@ -48,12 +48,22 @@ export default class VillageScene extends Phaser.Scene {
 
         // Clavier
         this.cursors = this.input.keyboard.createCursorKeys();
+        // ===============================
+        // Joystick tactile
+       // ===============================
+
+        this.touch = {
+        up: false,
+        down: false,
+        left: false,
+        right: false
+        };
 
     }
 
     update() {
 
-        this.player.update(this.cursors);
+        this.player.update(this.cursors, this.touch);
 
     }
 
